@@ -1,3 +1,4 @@
+import { Header } from '@/shared/components/Header'
 import {
 	ClerkLoaded,
 	ClerkLoading,
@@ -12,6 +13,7 @@ import type { JSX } from 'react'
 function Home(): JSX.Element {
 	return (
 		<main>
+			<Header />
 			Hello, we will be testing Clerk latest update and Drizzle ORM.
 			<div className="flex flex-col">
 				<ClerkLoading>

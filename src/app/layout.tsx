@@ -4,7 +4,7 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import type { JSX, ReactNode } from 'react'
 import type { Metadata } from 'next'
-import { Header } from '@/shared/components/Header'
+import { Toaster } from 'react-hot-toast'
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -26,8 +26,12 @@ function RootLayout({ children }: TRootLayout): JSX.Element {
 		<ClerkProvider>
 			<html lang="en">
 				<body className={roboto.className}>
-					{/* <Header /> */}
 					{children}
+					<Toaster
+						position="top-center"
+						reverseOrder={false}
+						toastOptions={{ className: 'toast' }}
+					/>
 				</body>
 			</html>
 		</ClerkProvider>

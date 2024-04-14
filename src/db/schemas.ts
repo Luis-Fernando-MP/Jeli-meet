@@ -9,18 +9,18 @@ export const users = pgTable('user', {
 	image: text('image').notNull()
 })
 
-// export const room = pgTable('room', {
-// 	id: uuid('id')
-// 		.default(sql`gen_random_uuid()`)
-// 		.notNull()
-// 		.primaryKey(),
-// 	userId: text('userId')
-// 		.notNull()
-// 		.references(() => users.id, { onDelete: 'cascade' }),
-// 	name: text('name').notNull(),
-// 	description: text('description'),
-// 	tags: text('tags').notNull(),
-// 	githubRepo: text('githubRepo')
-// })
+export const room = pgTable('room', {
+	id: uuid('id')
+		.default(sql`gen_random_uuid()`)
+		.notNull()
+		.primaryKey(),
+	userId: text('userId')
+		.notNull()
+		.references(() => users.id, { onDelete: 'cascade' }),
+	name: text('name').notNull(),
+	description: text('description'),
+	tags: text('tags').notNull(),
+	githubRepo: text('githubRepo')
+})
 
-// export type Room = typeof room.$inferSelect
+export type Room = typeof room.$inferSelect
