@@ -1,0 +1,35 @@
+{
+	"name": "jeli-meet",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"turbo": "rm -rf .next && pnpm store prune && pnpm dev",
+		"db:push": "drizzle-kit push:pg --config=drizzle.config.ts",
+		"db:studio": "drizzle-kit studio"
+	},
+	"dependencies": {
+		"@auth/drizzle-adapter": "0.9.0",
+		"@clerk/nextjs": "^4.29.12",
+		"drizzle-orm": "^0.30.8",
+		"lucide-react": "0.368.0",
+		"next": "14.2.1",
+		"next-auth": "^4.24.7",
+		"pg": "^8.11.5",
+		"postgres": "^3.4.4",
+		"react": "18",
+		"react-dom": "18"
+	},
+	"devDependencies": {
+		"@types/node": "20",
+		"@types/react": "18",
+		"@types/react-dom": "18",
+		"drizzle-kit": "^0.20.14",
+		"eslint": "8",
+		"eslint-config-next": "14.2.1",
+		"typescript": "5"
+	}
+}
