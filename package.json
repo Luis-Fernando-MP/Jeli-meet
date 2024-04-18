@@ -16,7 +16,6 @@
 		"@hookform/resolvers": "^3.3.4",
 		"drizzle-orm": "^0.30.8",
 		"lucide-react": "0.368.0",
-		"net": "^1.0.2",
 		"next": "14.2.1",
 		"pg": "^8.11.5",
 		"postgres": "^3.4.4",

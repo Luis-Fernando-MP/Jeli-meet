@@ -14,7 +14,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
 	title: 'JELI MEET',
 	description: 'Sistema web, servidor de inteligencias artificiales',
-	icons: '/logo.png'
+	icons: '/logo.svg'
 }
 
 type TRootLayout = {

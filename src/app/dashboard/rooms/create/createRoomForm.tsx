@@ -39,13 +39,10 @@ export function CreateRoomForm() {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<input placeholder="This is your public room name." {...register('name')} />
-			<input placeholder="Please describe what you are be coding on" {...register('description')} />
-			<input
-				placeholder="Please put a link to the project you are working on"
-				{...register('githubRepo')}
-			/>
-			<input placeholder="typescript, nextjs, tailwind" {...register('tags')} />
+			<input placeholder="Nombre de la sala" {...register('name')} />
+			<input placeholder="Descripción de la sala" {...register('description')} />
+			<input placeholder="repositorio" {...register('githubRepo')} />
+			<input placeholder="Tecnologías typescript..." {...register('tags')} />
 
 			<button type="submit">Submit</button>
 		</form>

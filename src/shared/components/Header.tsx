@@ -1,6 +1,16 @@
 'use client'
 
-import { useAuth } from '@clerk/nextjs'
+import {
+	ClerkLoaded,
+	ClerkLoading,
+	SignInButton,
+	SignUpButton,
+	SignedIn,
+	SignedOut,
+	UserButton,
+	useAuth
+} from '@clerk/nextjs'
+import { Loader } from 'lucide-react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,30 +21,36 @@ export function Header() {
 	const isLoggedIn = isSignedIn
 
 	return (
-		<header className="bg-gray-100 py-2 dark:bg-gray-900 z-10 relative">
-			<div className="container mx-auto flex justify-between items-center">
-				<Link href="/" className="flex gap-2 items-center text-xl hover:underline">
+		<header>
+			<div>
+				<Link href="/">
 					<Image
-						src="/icon.png"
-						width="60"
-						height="60"
+						src="/logo.svg"
+						width="20"
+						height="20"
 						alt="the application icon of a magnifying glass"
 					/>
-					DevFinder
+					JELI meet&apos;s
 				</Link>
-
-				<nav className="flex gap-8">
-					{isLoggedIn && (
-						<>
-							<Link className="hover:underline" href="/browse">
-								Browse
-							</Link>
-
-							<Link className="hover:underline" href="/your-rooms">
-								Your Rooms
-							</Link>
-						</>
-					)}
+				<nav>
+					<Link href="/browse">Home</Link>
+					<Link href="/your-rooms">About</Link>
+					<ClerkLoading>
+						<Loader />
+					</ClerkLoading>
+					<ClerkLoaded>
+						<SignedIn>
+							<UserButton afterSignOutUrl="/" />
+						</SignedIn>
+						<SignedOut>
+							<SignInButton mode="modal">
+								<button>Ingresar</button>
+							</SignInButton>
+							<SignUpButton mode="modal">
+								<button>Registrarse</button>
+							</SignUpButton>
+						</SignedOut>
+					</ClerkLoaded>
 				</nav>
 			</div>
 		</header>
