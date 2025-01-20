@@ -14,15 +14,18 @@
 	"dependencies": {
 		"@clerk/nextjs": "^4.29.12",
 		"@hookform/resolvers": "^3.3.4",
+		"@stream-io/video-react-sdk": "^0.6.7",
 		"drizzle-orm": "^0.30.8",
 		"lucide-react": "0.368.0",
 		"next": "14.2.1",
+		"nextjs-toploader": "1.6.11",
 		"pg": "^8.11.5",
 		"postgres": "^3.4.4",
 		"react": "18",
 		"react-dom": "18",
 		"react-hook-form": "7.51.3",
 		"react-hot-toast": "2.4.1",
+		"stream-chat": "8.26.0",
 		"svix": "1.21.0",
 		"zod": "3.22.4"
 	},

@@ -5,6 +5,7 @@ import { Roboto } from 'next/font/google'
 import type { JSX, ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Toaster } from 'react-hot-toast'
+import NextTopLoader from 'nextjs-toploader'
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -26,6 +27,7 @@ function RootLayout({ children }: TRootLayout): JSX.Element {
 		<ClerkProvider>
 			<html lang="en">
 				<body className={roboto.className}>
+					<NextTopLoader height={5} />
 					{children}
 					<Toaster
 						position="top-center"

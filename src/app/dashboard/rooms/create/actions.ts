@@ -8,7 +8,7 @@ export async function createRoomAction(roomData: Omit<Room, 'id'>) {
 	const isCreated = await db.insert(room).values({ ...roomData })
 	console.log(isCreated)
 
-	// revalidatePath('/browse')
+	revalidatePath('/dashboard/rooms')
 
 	// return room
 }
